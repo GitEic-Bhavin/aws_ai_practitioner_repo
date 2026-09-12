@@ -407,27 +407,35 @@ In exam scenarios, AWS will test your ability to balance **Cost, Latency (speed)
 
 ### Key Exam Distinctions (By Category)
 
-#### 1. Understanding Models (Text & Multimodal Input)
+Yes — this section is already conceptually correct. I would clean up the Markdown and make the **exam keywords more distinct**, so you can quickly identify the correct Nova model in an AWS AI Practitioner question.
 
-These models answer questions, analyze data, and summarize inputs.
+### 1. Understanding Models — Text & Multimodal Input
 
-| Model | Exam Keywords & Core Purpose | Best Exam Scenario |
-| --- | --- | --- |
-| **Nova Micro** | • **Text-only**<br>
+These models **understand input and generate responses**. The key difference is their **speed, cost, capability, and modality**.
 
-<br>• Lowest latency (fastest)<br>
+| **Model**        | **Exam Keywords & Core Purpose**                                                                                                                         | **Best Exam Scenario**                                                                                                                                                                     |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Nova Micro**   | • **Text-only** input<br>• **Lowest latency**<br>• **Lowest cost**<br>• Designed for simple language tasks                                               | **High-volume, simple text processing** where speed and cost are the priority.<br><br>Examples: text classification, simple extraction, basic summarization, simple chat, and translation. |
+| **Nova Lite**    | • **Low-cost multimodal** model<br>• Accepts **text, images, and video**<br>• Fast<br>• Designed for cost-efficient multimodal workloads                 | Processing **large volumes of images/video + text** when you need multimodal capability but want to minimize cost.                                                                         |
+| **Nova Pro**     | • **Balanced** capability, accuracy, speed, and cost<br>• More capable than Lite<br>• Supports **complex tasks**<br>• Suitable for **agentic workflows** | **General enterprise AI workloads**, coding/software development, complex analysis, video summarization, and multi-step AI agents.                                                         |
+| **Nova Premier** | • **Most capable** Nova understanding model<br>• Highest level of **reasoning/capability**<br>• Can act as a **teacher model for model distillation**    | **Highly complex reasoning** or using a powerful model to generate **synthetic data** / teacher outputs for training or improving smaller models.                                          |
 
-<br>• Lowest cost | High-volume simple text processing, basic text classification, fast translation, basic chat where speed/cost matters most. |
-| **Nova Lite** | • Low-cost **multimodal** (Text + Image + Video input)<br>
+### 🧠 Exam shortcut
 
-<br>• Fast speed | Processing high-volume images or video content alongside text at a very low budget. |
-| **Nova Pro** | • Balanced accuracy, speed, and cost<br>
+| If the question says...                             | Think...           |
+| --------------------------------------------------- | ------------------ |
+| **"Text only + cheapest + fastest"**                | → **Nova Micro**   |
+| **"Images/video + low cost"**                       | → **Nova Lite**    |
+| **"Balance of performance + cost + complex tasks"** | → **Nova Pro**     |
+| **"Most capable + complex reasoning"**              | → **Nova Premier** |
+| **"Teacher model / model distillation"**            | → **Nova Premier** |
 
-<br>• Complex tasks & agentic workflows | General enterprise workloads, software development/coding, video summarization, multi-step AI agents. |
-| **Nova Premier** | • Most capable / highest reasoning<br>
+### Important distinction
 
-<br>• **Teacher model for Model Distillation** | Extremely complex reasoning tasks, or generating synthetic data/logs to train smaller models. |
+Don't confuse **Nova Lite** with **Nova Micro**:
 
+**Micro → Text only**
+**Lite → Multimodal**
 
 #### 2. Creative Models (Visual Generation Output)
 
