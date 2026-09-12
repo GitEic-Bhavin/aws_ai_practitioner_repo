@@ -464,25 +464,38 @@ For the **AWS AI Practitioner (AIF-C01)** exam, the main upgrade theme for Nova 
 
 ### Core Upgrades & New Models in Nova 2
 
-| Nova 2 Model Name | What It Does (Core Concept) | Exam Keywords & Scenarios |
-| --- | --- | --- |
-| **Nova 2 Lite** | • Low-cost, fast reasoning model for everyday workloads<br>
+Here is the cleaned-up and properly formatted Markdown table.
 
-<br>• Multi-input (Text, images, videos, documents)<br>
+The HTML line breaks (`<br>`, `<br><br>`) have been removed to fix the layout issues, and bullet points are aligned cleanly for quick exam review.
 
-<br>• **1 Million Token Context Window** | • **Analyze massive documents or long videos** without exceeding context limits.<br>
+### Core Upgrades & New Models in Nova 2
 
-<br>• Everyday chatbots, automated document processing, and agentic workflows at low cost. |
-| **Nova 2 Sonic** | • Next-gen **Speech-to-Speech** foundation model<br>
+Yes. The main issue is that the **bullet points are breaking the Markdown table structure**. Each model should have all its information inside the same table cell.
 
-<br>• Handles natural, real-time voice conversations | • **Voice-first applications** (call center bots, real-time audio interaction) requiring ultra-low latency speech exchange. |
-| **Nova 2 Multimodal Embeddings** | • Converts text, images, videos, and documents into high-dimensional vectors | • **Agentic RAG (Retrieval-Augmented Generation)**.<br>
+For **AWS Certified AI Practitioner exam preparation**, I would structure it like this:
 
-<br>• **Semantic Search** across mixed media (e.g., searching images using text queries). |
-| **Nova 2 Omni** | • **All-in-one** model<br>
+| **Nova 2 Model**                 | **What It Does — Core Concept**                                                                                                                                                                          | **Exam Keywords / When to Use**                                                                                                                                                                                                    |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nova 2 Lite**                  | • Low-cost, fast reasoning model for everyday workloads.<br>• Supports **multimodal inputs** such as text, images, video, and documents.<br>• **1 million-token context window**.                        | • **Low cost + fast reasoning**<br>• Analyze **massive documents or long videos** without exceeding context limits.<br>• Everyday chatbots<br>• Automated document processing<br>• Agentic workflows where cost efficiency matters |
+| **Nova 2 Sonic**                 | • Next-generation **speech-to-speech** foundation model.<br>• Designed for natural, real-time voice conversations.<br>• Optimized for **low-latency audio interaction**.                                 | • **Speech-to-Speech**<br>• **Real-time voice**<br>• **Low latency**<br>• Voice-first applications<br>• Call-center / conversational voice bots<br>• Real-time audio interaction                                                   |
+| **Nova 2 Multimodal Embeddings** | • Converts **text, images, videos, and documents** into high-dimensional **vectors/embeddings**.<br>• Enables different types of content to be represented in a common vector space.                     | • **Embeddings**<br>• **Multimodal search**<br>• **Semantic search**<br>• **Agentic RAG**<br>• Search images using text queries<br>• Retrieve relevant information across mixed media                                              |
+| **Nova 2 Omni**                  | • **All-in-one multimodal model**.<br>• Processes **text, images, video, and speech**.<br>• Can generate **text and images**.<br>• Useful when multiple modalities need to be handled by a single model. | • **Multimodal input + multimodal output**<br>• One model instead of stitching multiple specialized models together.<br>• Applications involving voice/video/text understanding with **text + image generation**                   |
 
-<br>• Processes multimodal inputs (text, image, video, speech) AND directly generates both text + images | • Applications that need a single model to digest voice/video/text AND output image/text generation without stitching separate models together. |
+### Easy exam memory trick
 
+| Model                            | Remember                                      |
+| -------------------------------- | --------------------------------------------- |
+| **Nova 2 Lite**                  | 💰 **Cheap + Fast + Long Context**            |
+| **Nova 2 Sonic**                 | 🎙️ **Voice → Voice**                         |
+| **Nova 2 Multimodal Embeddings** | 🔎 **Convert content → Vectors → Search/RAG** |
+| **Nova 2 Omni**                  | 🧠 **Everything together → Text + Images**    |
+
+**Most important distinction for the exam:**
+
+> **Lite = reasoning/workloads**
+> **Sonic = speech**
+> **Embeddings = vector representation + search/RAG**
+> **Omni = broad multimodal understanding + generation**
 
 ### Key Takeaways for Exam Questions
 
