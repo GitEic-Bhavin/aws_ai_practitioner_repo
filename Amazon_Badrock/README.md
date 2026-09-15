@@ -217,7 +217,22 @@ Your prompt/data source will deviced into small chuncks is called `Embedded`. Th
 
 * **3. Amazon S3 Vectors** - If you wanna very cost effective and durable stotrage with sub-second query performance
 
-**4. Amazon OpenSearch Service** - 
+**4. Amazon OpenSearch Service** - OpenSearch is useful when you need search + vector similarity + filtering/analytics together.
+
+Exam keywords
+
+If you see:
+
+- Full-text search
+- Semantic search
+- Vector search
+- Similarity search
+- Hybrid search
+- RAG
+- Search and analytics
+-Log/search workloads
+
+👉 Think OpenSearch
 
 
 
