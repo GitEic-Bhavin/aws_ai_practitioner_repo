@@ -539,6 +539,18 @@ Which of the following represents the best option for the given use case?
 ![alt text](bfts.png)
 
 
+**Real Challanges**
+
+  - **Data Quality**
+
+  - **Overfitting and Underfitting**
+
+  - **Bias** - Bias will never clean 100%. Some percentage of bias will always be there.
+
+  - **Model Explainability**
+
+  - **Scalability** - Deep learning complex model requires significant of more computational resources. Training these model can be more costly. Optimizing algorithms to reduce computational resources is the most challanges.
+
 ### Incorrect Options:
 * **Option A:** Machine learning has a wide range of applications across virtually every industry, so real-world applicability is not a primary constraint.
 * **Option C:** While high compute power is required for massive foundation models, cloud infrastructure provides ample computational resources for running standard machine learning models.

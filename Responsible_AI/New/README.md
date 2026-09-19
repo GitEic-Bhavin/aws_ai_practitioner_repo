@@ -904,7 +904,9 @@ You need to consider,
 
 The policies should address responsible AI throughout the AI lifecycle.
 
-### 2. Review Cadence
+### 2. Review Cadence - Regularly audit and re-evaluating AI System by schduled timelines.
+
+**Exam Tip**: The exam often tests whether governance requires continuous oversight—remember that regular, scheduled reviews with multidisciplinary teams are essential.
 
 Organizations should define a **review cadence**.
 
@@ -931,6 +933,8 @@ Non-technical reviews can examine:
 - Policies
 - Responsible AI principles
 - Regulatory requirements
+
+**Exam Tip**: Understand the distinction between technical metrics (performance, quality) and non-technical checks (regulations, ethics) before deploying new models.
 
 Before deploying a new model, organizations should Test & Validate the procedures for model outputs. Make sure appropriate safety checks are in place.
 
