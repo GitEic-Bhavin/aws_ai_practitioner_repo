@@ -132,3 +132,51 @@ What is the primary purpose of measuring pre-training data bias using Amazon Sag
 * **"Model Explainability" (SageMaker Clarify)** $\rightarrow$ Uses SHAP values to explain feature importance and feature influence.
 * **"Drift Monitoring"** $\rightarrow$ **SageMaker Model Monitor** (tracks data, concept, and quality drift in live production endpoints).
 
+
+
+**NOTES**
+
+Algorithm for Supervised and UnSupervised
+
+![alt text](algo.png)
+
+## BLEU & ROUGH Model Evaluation Method
+
+Here is a simple breakdown of why **Option B** is correct for this specific exam question:
+
+---
+
+### The Core Problem with Automated Metrics (ROUGE / BLEU)
+
+Automated metrics like ROUGE and BLEU work purely on **n-gram (word-for-word) overlap**. They compare the text word-by-word against a reference summary.
+
+#### Example:
+
+Suppose a document is about a company's earnings.
+
+* **Reference Summary:** *"The company made a $50 million profit this year."*
+* **Model Output 1:** *"The company made a $50 million loss this year."*
+
+If you run **ROUGE/BLEU** on Output 1, it gets a **90%+ match score** because almost every word matches the reference. However, **the meaning is completely wrong** (profit vs. loss). An automated algorithm cannot catch this semantic error.
+
+
+### Why Human Evaluation is Required for Summarization
+
+For generative tasks like summarization, success depends on qualities an automated formula cannot evaluate:
+
+1. **Factual Accuracy & Hallucinations:** A summary can sound fluent and use words from the text, but contain completely false statements. Only a human reviewer can verify if the summary accurately reflects the source document without making up facts.
+2. **Coherence & Structure:** A summary must read naturally and flow logically. ROUGE and BLEU don't check sentence flow or readability—they just count matching words.
+3. **Paraphrasing:** A human can write a perfect summary using completely different vocabulary from the reference. ROUGE/BLEU would give that summary a **very low score** simply because the exact words don't match, even though the summary is brilliant.
+
+
+### Key Takeaway for the AWS AI Practitioner Exam
+
+* **ROUGE & BLEU:** Good for quick, cheap, automated checks during model iteration, but they **fail to measure quality, coherence, and factual accuracy**.
+* **Human Evaluation:** The **gold standard** for evaluating generative AI outputs (summarization, translation, Q&A) because human judgment is required to verify subjective quality, truthfulness, and readability.
+
+| Feature | Convolutional Neural Network (CNN) | Recurrent Neural Network (RNN) |
+| --- | --- | --- |
+| Primary Data Type | "Spatial data (Images, Grid data)" | "Sequential / Temporal data (Text, Audio, Time-series)" |
+| Core Mechanism | Applies filters over spatial dimensions | Uses feedback loops to pass memory across sequential steps |
+| Memory Concept | No memory of previous inputs; processes each input independently | Has memory; uses past sequence information to predict future steps |
+| Input Structure | "Fixed-size grid structure (e.g., pixels)" | Variable-length sequences |
