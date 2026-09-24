@@ -920,6 +920,30 @@ Given this context |  which of the following summarizes the differences between 
 * **Both Guardrails and watermark detection help control the interaction between users and FMs...:** Incorrect because watermark detection is a post-processing origin verification mechanism |  not a real-time conversational filter.
 * **Watermark detection helps control... whereas |  Guardrails identifies...:** Incorrect because it completely reverses the functions of Guardrails and watermark detection.
 
+# Question 32
+
+A company has recently migrated to AWS Cloud and it wants to optimize the hardware used for its AI workflows.
+
+Which of the following would you suggest?
+
+- Leverage AWS Inferentia for high-performance, cost-effective Deep Learning training. Leverage AWS Trainium for the deep learning (DL) and generative AI inference applications
+
+- Leverage either AWS Trainium or AWS Inferentia for high-performance, cost-effective Deep Learning training
+
+- Leverage either AWS Trainium or AWS Inferentia for the deep learning (DL) and generative AI inference applications
+
+- Leverage AWS Trainium for high-performance, cost-effective Deep Learning training. Leverage AWS Inferentia for the deep learning (DL) and generative AI inference applications
+
+Overall explanation
+
+**Correct option:**
+
+- **Leverage AWS Trainium for high-performance, cost-effective Deep Learning training. Leverage AWS Inferentia for the deep learning (DL) and generative AI inference - applications**
+
+AWS Inferentia accelerators are designed by AWS to deliver high performance at the lowest cost in Amazon EC2 for your deep learning (DL) and generative AI inference applications. The first-generation AWS Inferentia accelerator powers Amazon Elastic Compute Cloud (Amazon EC2) Inf1 instances, which deliver up to 2.3x higher throughput and up to 70% lower cost per inference than comparable Amazon EC2 instances.
+
+AWS Trainium is the machine learning (ML) chip that AWS purpose-built for deep learning (DL) training of 100B+ parameter models. Each Amazon Elastic Compute Cloud (Amazon EC2) Trn1 instance deploys up to 16 Trainium accelerators to deliver a high-performance, low-cost solution for DL training in the cloud.
+
 # Question 33
 
 A retail company needs a solution that can help in forecasting foot traffic |  visitor counts |  and channel demand to efficiently manage the operating costs.
@@ -1180,3 +1204,533 @@ Which of the following options is mandatory for the given use case?
 * **Preparing / Splitting / Transforming data:** Data Wrangler
 * **Storing & sharing features:** Feature Store
 * **Detecting bias & explainability:** Clarify
+
+
+### Question 48
+
+A law firm is handling an increasing volume of legal documents, including contracts, agreements, and case files, and seeks to streamline its document review process by automatically extracting key information such as important clauses, dates, and entities. The firm wants to implement an automated solution that can efficiently handle this task, reducing the time and effort required for manual review while ensuring accuracy in identifying critical details within the documents.
+
+Which of the following options would you suggest for achieving this goal? (Select three)
+
+- Amazon Comprehend
+
+- Generative AI powered summarization chatbot
+
+- Convolutional Neural Network (CNN)
+
+- Amazon Personalize
+
+- WaveNet
+
+- Amazon Textract
+
+**Correct Answers (Select Three):**
+
+* **Amazon Textract**
+* **Amazon Comprehend**
+* **Generative AI powered summarization chatbot**
+
+### AWS AI Practitioner Exam Perspective & Key Hints
+
+1. **Understanding Intelligent Document Processing (IDP):**
+* **The Goal:** Modern AWS architectures combine OCR, Natural Language Processing (NLP), and Generative AI to process complex documents end-to-end.
+* **Amazon Textract (Extraction Stage):** Automatically extracts printed text, handwriting, forms, tables, and structured data from scanned documents or PDFs (e.g., pulling dates, numbers, and layout elements).
+* **Amazon Comprehend (Analysis/NLP Stage):** Uses pre-trained NLP to perform entity recognition, key phrase extraction, and document classification across unstructured text (e.g., tagging contract types, identifying parties or specific clauses).
+* **Generative AI / Large Language Models (Enrichment Stage):** Generative AI powered summarization chatbot leverages large language models to generate concise summaries of text. With prompt engineering, the summarization chatbot can be specifically tailored to accurately extract detailed key points, entities, or legal clauses from complex legal documents.
+
+
+2. **Why Other Options Are Incorrect:**
+* **Convolutional Neural Network (CNN):** A deep learning architecture primarily suited for computer vision tasks (grid-based spatial data like image classification or object detection), not for high-level textual document parsing and semantic extraction.
+* **Amazon Personalize:** A fully managed machine learning service built specifically for generating **personalized product and content recommendations**, which is irrelevant for document processing.
+* **WaveNet:** A deep generative model designed specifically for **raw audio waveform synthesis** (speech generation), which cannot analyze or extract information from legal documents.
+
+
+
+### Exam Quick-Memory Shortcut:
+
+* **Scanned/Image Text & Tables:** Amazon Textract
+* **NLP & Entity Extraction:** Amazon Comprehend
+* **Summarization & Contextual Synthesis:** Generative AI / FMs
+* **Personalized Recommendations:** Amazon Personalize
+* **Audio Synthesis:** WaveNet
+
+
+### Question 50
+
+A financial services company is developing a machine-learning model to classify loan applications as either "approved" or "denied." To ensure the model performs effectively, the company wants to evaluate how accurately it predicts these outcomes. Specifically, they are interested in knowing the overall percentage of correct predictions, including both approved and denied applications. The company is considering several metrics to assess the model's performance in terms of the number of correct outcomes.
+
+Which metric would be most appropriate for this purpose?
+
+- The company should use F1 Score, a metric that considers both precision and recall by calculating their harmonic mean
+
+- The company should use Root Mean Squared Error (RMSE), a metric that calculates the square root of the average of the squared differences between predicted and actual values
+
+- The company should use Accuracy, which measures the proportion of correctly predicted instances (both true positives and true negatives) out of the total number of instances
+
+- The company should use R-squared, a statistical measure that indicates the proportion of variance in the dependent variable explained by the independent variables
+
+**Correct Answer:**
+
+🔘 **The company should use Accuracy, which measures the proportion of correctly predicted instances (both true positives and true negatives) out of the total number of instances**
+
+### AWS AI Practitioner Exam Perspective & Key Hints
+
+1. **Why "Accuracy" is the Correct Metric:**
+* **Core Definition:** Accuracy measures the percentage of all predictions (both positive and negative) that the model got right:
+
+$$\text{Accuracy} = \frac{\text{True Positives} + \text{True Negatives}}{\text{Total Instances}}$$
+
+
+* **Exam Scenario Signal:** The question explicitly states they want to know the *overall percentage of correct predictions, including both approved and denied applications*. When looking for simple overall correctness across all classes without focusing on false alarms or missed detections, **Accuracy** is the primary choice.
+
+
+2. **Why Other Options Are Incorrect:**
+* **F1 Score:** Harmonic mean of precision and recall. Best used for **imbalanced datasets** (e.g., fraud detection where positive cases are rare) or when you care heavily about balancing false positives vs. false negatives.
+* **Root Mean Squared Error (RMSE):** Used exclusively for **regression tasks** (predicting continuous numerical values like house prices or temperatures), not classification tasks.
+* **R-squared ($R^2$):** A statistical measure used in **regression models** to determine how well independent variables explain the variance of a dependent variable.
+
+
+### Exam Quick-Memory Shortcut:
+
+* **Classification (Overall Correctness):** Accuracy
+* **Classification (Imbalanced Data / Precision vs Recall Balance):** F1 Score
+* **Classification (Minimize False Alarms):** Precision
+* **Classification (Catch all Positives / Minimize Misses):** Recall
+* **Regression (Continuous Values):** RMSE, MAE, MSE, $R^2$
+
+
+### Question 52
+
+A media company is deploying machine learning models using Amazon SageMaker to generate personalized content recommendations. Since the company has intermittent workloads and it does not want to configure or manage the underlying infrastructure, the development team is evaluating different deployment models that offer cost savings by allowing for cold starts. Understanding which deployment model suits this use case will help them balance cost efficiency with operational needs.
+
+What do you suggest?
+
+- Asynchronous Inference
+
+- Serverless Inference
+
+- Real-time hosting services
+
+- Batch transform
+
+**Correct Answer:**
+
+🔘 **Serverless Inference**
+
+### AWS AI Practitioner Exam Perspective & Key Hints
+
+1. **Why "Serverless Inference" is the Correct Choice:**
+* **Intermittent Workloads & Cold Starts:** Serverless Inference automatically manages compute capacity and scales down to zero instances when there is no incoming traffic. When a new request arrives after an idle period, it provisions capacity on the fly, which introduces a brief latency known as a **cold start**.
+* **Pay-per-use Model:** You only pay for the exact compute processing time (duration in milliseconds and memory consumed) when serving predictions—making it extremely cost-effective for spiky or low-frequency traffic without paying for idle server time.
+* **Exam Keywords / Signals:** *"Intermittent workloads," "scale to zero," "cold starts acceptable," "no infrastructure management."*
+
+
+2. **Why Other Options Are Incorrect:**
+* **Asynchronous Inference:** Designed for **large payload sizes** (up to 1 GB) or long processing times (up to 1 hour). It queues requests via Amazon SQS and processes them asynchronously. While it can scale down to zero, it is built for long-running batch-like inference requests rather than simple intermittent real-time calls.
+* **Real-Time Hosting Services:** Keeps dedicated compute instances continuously running 24/7 to provide sub-second latency with low variance. There are no cold starts, but you pay constantly for idle infrastructure capacity.
+* **Batch Transform:** Used for processing offline predictions on an **entire pre-existing dataset all at once** (e.g., nightly or weekly offline inference jobs), rather than serving on-demand application endpoints.
+
+
+
+### Exam Quick-Memory Shortcut:
+
+* **Intermittent / Idle periods + Cold starts acceptable:** Serverless Inference
+* **Large payloads (up to 1GB) / Long processing time (up to 1hr):** Asynchronous Inference
+* **Low latency / Persistent 24/7 traffic:** Real-time Inference
+* **Offline processing over an entire dataset:** Batch Transform
+
+
+### Question 53
+
+An e-learning company is developing a Large Language Model (LLM) chatbot using Amazon Bedrock to enhance the personalized learning experience on its platform. The chatbot needs to dynamically tailor its responses based on the user's age group. By leveraging Amazon Bedrock's foundation models, the company aims to create an adaptive learning tool that delivers relevant, engaging, and age-appropriate support to a diverse user base.
+
+As an AI Practitioner, which of the following solutions would you recommend?
+
+- Perform fine-tuning for the model to adjust the style or tone of responses based on user age
+
+- Leverage Retrieval-Augmented Generation (RAG) to customize responses based on user characteristics like age
+
+- Perform model re-training for tailoring responses based on user age
+
+- Implement dynamic prompt engineering to customize responses based on user characteristics like age
+
+
+
+**Correct Answer:**
+
+🔘 **Implement dynamic prompt engineering to customize responses based on user characteristics like age**
+
+### AWS AI Practitioner Exam Perspective & Key Hints
+
+1. **Why "Dynamic Prompt Engineering" is the Correct Choice:**
+* **In-Context Customization:** Adjusting the style, tone, or reading level based on simple user metadata (such as age group, audience, or region) can be achieved instantly without changing model parameters or loading external knowledge bases.
+* **Low Friction & Cost Effective:** Modifying input prompts dynamically (e.g., injecting system instructions like *"Explain this simply for a 10-year-old"* vs. *"Provide a detailed technical breakdown"*) requires zero model training, zero additional database infrastructure, and works out-of-the-box with Amazon Bedrock foundation models.
+
+
+2. **Why Other Options Are Incorrect:**
+* **Retrieval-Augmented Generation (RAG):** Used to inject **external/proprietary factual data** into the prompt context to prevent hallucinations and access up-to-date knowledge. It is not designed for altering linguistic tone or formatting based on user demographics.
+* **Fine-Tuning:** Used to train a model on labeled datasets to learn specific domain tasks or deep formatting behavior over time. It is expensive, time-consuming, and unnecessary for simple style/tone adaptation across broad age groups.
+* **Model Re-training:** Involves pre-training or updating all weights across the entire model on massive datasets, which is cost-prohibitive and completely excessive for tailoring responses.
+
+
+
+### Exam Quick-Memory Shortcut:
+
+* **Adapting tone/style/audience on the fly:** Prompt Engineering
+* **Injecting specific internal factual data/knowledge:** RAG
+* **Improving task performance/domain expertise:** Fine-tuning
+
+### Question 54
+
+A technology company is exploring AWS DeepRacer to introduce its employees to machine learning through an engaging and hands-on platform. The team wants to understand the key features and capabilities of AWS DeepRacer. Which of the following represents the CORRECT statement about AWS DeepRacer?
+
+- The AWS DeepRacer vehicle is a Wi-Fi enabled, physical vehicle that can drive itself on a physical track
+
+- AWS DeepRacer vehicle is only a virtual vehicle running on AWS DeepRacer simulator
+
+- AWS DeepRacer car is based on a model that uses a supervised learning ML algorithm
+
+- You need an AWS DeepRacer car to use the AWS DeepRacer simulator
+
+**Correct option:**
+
+- The AWS DeepRacer vehicle is a Wi-Fi enabled, physical vehicle that can drive itself on a physical track
+
+- The AWS DeepRacer vehicle is a Wi-Fi-enabled, physical vehicle that can drive itself on a physical track by using a reinforcement learning model.
+
+- You can manually control the vehicle or deploy a model for the vehicle to drive autonomously.
+
+- The autonomous mode runs inference on the vehicle's compute module. Inference uses images that are captured from the camera that is mounted on the front.
+
+- A Wi-Fi connection allows the vehicle to download software. The connection also allows the user to access the device console to operate the vehicle by using a computer or mobile device.
+
+**Correct Answer:**
+
+🔘 **The AWS DeepRacer vehicle is a Wi-Fi enabled, physical vehicle that can drive itself on a physical track**
+
+### AWS AI Practitioner Exam Perspective & Key Hints
+
+1. **Why "Wi-Fi enabled, physical vehicle" is the Correct Statement:**
+* **Physical 1/18th Scale RC Car:** AWS DeepRacer is a real, physical scale car equipped with an onboard compute module, a front-facing camera, and Wi-Fi connectivity.
+* **Onboard Inference:** Once you train a reinforcement learning (RL) model in the cloud, you can deploy it directly onto the physical car to run autonomous local inference on a physical track using camera inputs.
+
+
+2. **Why Other Options Are Incorrect:**
+* **"AWS DeepRacer vehicle is only a virtual vehicle..."** Incorrect, because while there is a 3D simulation environment, AWS also manufactures and sells the physical hardware car.
+* **"AWS DeepRacer car is based on a model that uses a supervised learning ML algorithm"** Incorrect. AWS DeepRacer is designed specifically as a fun, hands-on way to learn **Reinforcement Learning (RL)** (agents, states, actions, and reward functions), not supervised learning.
+* **"You need an AWS DeepRacer car to use the AWS DeepRacer simulator"** Incorrect. Developers can build, train, evaluate, and race models entirely within the virtual 3D AWS DeepRacer simulator without owning the physical car.
+
+
+### Exam Quick-Memory Shortcut:
+
+* **AWS DeepRacer core paradigm:** **Reinforcement Learning (RL)** + **Autonomous Driving** (available both virtually in a 3D simulator and physically via a 1/18th scale Wi-Fi car).
+
+### Question 55
+
+A healthcare organization is deploying machine learning models to assist in patient diagnosis and treatment planning. To ensure responsible use and compliance with healthcare regulations, the data science team needs a tool that offers clear guidance on how each model should be used, along with an assessment of the potential risks associated with its deployment. Understanding these factors is critical for maintaining transparency and trust in the AI models used in such sensitive applications.
+
+Which AWS tool do you recommend for the given use case?
+
+- Amazon SageMaker Canvas
+
+- Amazon SageMaker Model Monitor
+
+- Amazon SageMaker Model Cards
+
+- Amazon SageMaker Ground Truth
+
+
+
+**Correct Answer:**
+
+🔘 **Amazon SageMaker Model Cards**
+
+### AWS AI Practitioner Exam Perspective & Key Hints
+
+1. **Why "Amazon SageMaker Model Cards" is the Correct Choice:**
+* **Purpose:** Serves as a centralized repository to document essential facts, intended uses, risk ratings, training data, evaluation results, and compliance guidelines for machine learning models.
+* **Exam Keywords / Signals:** *"Clear guidance on how each model should be used," "assessment of potential risks," "governance," "compliance," "transparency," "single place to document."* Whenever a scenario emphasizes auditing, regulatory compliance, risk documentation, or transparent model usage, **Model Cards** is the target tool.
+
+
+2. **Why Other Options Are Incorrect:**
+* **Amazon SageMaker Model Monitor:** Used for continuous operational tracking of deployed models in production to detect data drift, model quality degradation, bias, and feature attribution drift over time. It does not provide static governance documentation or risk rating cards.
+* **Amazon SageMaker Canvas:** A visual, no-code interface designed for business analysts to build ML models or access foundation models without writing code.
+* **Amazon SageMaker Ground Truth:** A human-in-the-loop and automated data labeling service used for annotating datasets before model training.
+
+
+
+### Exam Quick-Memory Shortcut:
+
+* **Model documentation, risk ratings, & compliance guidelines:** Model Cards
+* **Detecting live endpoint drift & performance degradation:** Model Monitor
+* **No-code visual ML modeling:** Canvas
+* **Data annotation & labeling:** Ground Truth
+
+### Question 56
+
+A research-focused AI company is developing a suite of machine learning models for tasks such as classification and content generation. The data science team needs to choose between discriminative and generative models depending on the specific use case. To make the right decision, they need to understand the fundamental differences between these two types of models, particularly in the context of generative AI, and how each model type fits into their project goals.
+
+What is the primary distinction between discriminative models and generative models in the context of generative AI?
+
+- Generative models focus on generating new data from learned patterns, whereas discriminative models classify data by distinguishing between different classes
+
+- Generative models are trained on labeled data, while discriminative models can be trained on both labeled and unlabeled data
+
+- Discriminative models are used to generate new data, while generative models are used only for classification
+
+- Discriminative models are only used for text classification, while generative models are only used for image classification
+
+
+
+**Correct Answer:**
+
+🔘 **Generative models focus on generating new data from learned patterns, whereas discriminative models classify data by distinguishing between different classes**
+
+### AWS AI Practitioner Exam Perspective & Key Hints
+
+1. **Core Distinction (Generative vs. Discriminative):**
+* **Discriminative Models:** Learn the decision boundary between classes. They map inputs ($x$) directly to labels ($y$) to answer *"What class is this?"* (e.g., Logistic Regression, SVMs, CNNs used for classification).
+* **Generative Models:** Learn the underlying probability distribution of the data itself. They model how data is generated to answer *"What does this data look like?"*, allowing them to create new samples (e.g., GPT-4, Stable Diffusion, GANs).
+
+
+
+### Exam Quick-Memory Shortcut:
+
+* **Discriminative:** Predicts labels / draws decision boundaries ($P(Y \mid X)$).
+* **Generative:** Creates new data content from learned distributions ($P(X, Y)$ or $P(X)$).
+
+### Question 57
+
+A media production company is looking to enhance its creative workflows by using AI to generate high-quality images from text prompts for marketing materials, storyboards, and content development. The company plans to use Amazon Bedrock for this purpose and wants to identify the most suitable Foundation Model to generate realistic and detailed images based on text descriptions provided by the creative team.
+
+Which of the following Foundation Models would you recommend for generating images from text prompts in this use case?
+
+- Jurassic
+
+- Stable Diffusion
+
+- Claude
+
+- Llama
+
+Overall explanation
+**Correct option:**
+
+- Stable Diffusion
+
+  - Stable Diffusion is a generative artificial intelligence (generative AI) model that produces unique photorealistic images from text and image prompts.
+
+**Incorrect options:**
+
+**Jurassic** - Jurassic family of models from AI21 Labs supported use cases such as question answering, summarization, draft generation, advanced information extraction, and ideation for tasks requiring intricate reasoning and logic.
+
+**Claude** - Claude is Anthropic’s frontier, state-of-the-art large language model that offers important features for enterprises like advanced reasoning, vision analysis, code generation, and multilingual processing.
+
+### Question 58:
+
+A traffic monitoring application needs to detect license plate numbers for the vehicles that pass a certain location from 11 PM to 7 AM every day.
+
+Which ML-powered AWS service is the right fit for this requirement?
+
+- Amazon SageMaker image classification algorithm
+
+Your answer is correct
+- Amazon Rekognition
+
+- Amazon SageMaker JumpStart
+
+- Amazon Textract
+
+**Correct option:**
+
+**Amazon Rekognition**
+
+- Amazon Rekognition is a cloud-based image and video analysis service that makes it easy to add advanced computer vision capabilities to your applications. The service is powered by proven deep learning technology and it requires no machine learning expertise to use. Amazon Rekognition includes a simple, easy-to-use API that can quickly analyze any image or video file that’s stored in Amazon S3.
+
+- You can add features that detect objects, text, and unsafe content, analyze images/videos, and compare faces to your application using Rekognition's APIs. With Amazon Rekognition's face recognition APIs, you can detect, analyze, and compare faces for a wide variety of use cases, including user verification, cataloging, people counting, and public safety.
+
+### Question 59
+
+A large enterprise is looking to implement an AI-powered assistant to help employees across departments streamline their work by answering questions, summarizing reports, generating content, and securely accessing data from internal systems. The company needs a solution that can seamlessly integrate with its enterprise systems while ensuring data privacy and security. The team is exploring various generative AI-powered assistants that can fulfill these requirements.
+
+Which of the following is a generative AI–powered assistant that can answer questions, provide summaries, generate content, and securely complete tasks based on data and information in the enterprise systems?
+
+- Amazon Q Developer
+
+- Amazon Q in Connect
+
+- Amazon Q Business
+
+- Amazon Q in QuickSight
+
+**Correct Answer:**
+
+🔘 **Amazon Q Business**
+
+### AWS AI Practitioner Exam Perspective & Key Hints
+
+1. **Why "Amazon Q Business" is the Correct Service:**
+* **Purpose:** A generative AI–powered assistant built to connect securely to **internal enterprise data sources** (like SharePoint, Amazon S3, Salesforce, Google Drive, and Confluence) to answer employee questions, generate content, and execute workplace tasks.
+* **Exam Keywords / Signals:** *"Employees across departments," "enterprise data/systems," "permissions-aware access," "HR / IT helpdesk," "summarizing internal reports."* Whenever a prompt describes a conversational assistant for general employees using corporate data, **Amazon Q Business** is the answer.
+
+
+2. **Why Other Options Are Incorrect:**
+* **Amazon Q Developer:** Designed specifically for **software engineers, developers, and IT operators** to assist with coding, debugging, security vulnerability fixes, and managing AWS infrastructure (in IDEs, terminal, and AWS console).
+* **Amazon Q in QuickSight:** Tailored for **business analysts and BI users** to generate dashboards, create data visualizations, and perform natural-language queries directly on analytics data.
+* **Amazon Q in Connect:** Built specifically for **contact center / customer service agents** inside Amazon Connect to provide real-time response recommendations during live customer service calls.
+
+
+
+### Exam Quick-Memory Shortcut:
+
+* **Internal Company Data / General Employees:** Amazon Q Business
+* **Coding, Infrastructure & AWS DevOps:** Amazon Q Developer
+* **BI Dashboards & Data Visualization:** Amazon Q in QuickSight
+* **Contact Center & Call Center Agents:** Amazon Q in Connect
+
+### Question 60
+
+**Question:**
+
+> A company is building an image recognition model to automate its quality assurance process. High accuracy in image annotation is critical to ensure the model can correctly identify defective products. To minimize the risk of incorrect annotations, the company needs a reliable labeling solution.
+> What is the best approach to achieve high accuracy and reduce the risk of errors in image annotations?
+
+**Correct Answer:**
+
+🔘 **Use GroundTruth Plus to label the data**
+
+### AWS AI Practitioner Exam Perspective & Key Hints
+
+- Amazon SageMaker GroundTruth Plus provides a fully managed data labeling service that helps deliver high-quality annotations. It uses a combination of human labelers and machine learning-assisted labeling to ensure accuracy and consistency in the labels. GroundTruth Plus also offers the ability to monitor labeling workflows and conduct quality assurance checks, significantly reducing the risk of incorrect annotations. It is an ideal solution for businesses looking to create accurate training datasets at scale while minimizing manual errors.
+
+1. **Why "Amazon SageMaker GroundTruth Plus" is the Correct Choice:**
+* **Turnkey Managed Service:** Unlike standard SageMaker Ground Truth (where you manage the labeling workforce, UI, and workflows yourself), **GroundTruth Plus** is a fully managed service where AWS provides expert human labelers, custom workflows, and built-in quality control.
+* **High-Accuracy Requirements:** When a scenario emphasizes **minimizing error rate, high precision/accuracy, quality assurance, and domain expertise** without needing your team to manage labeling operations, **GroundTruth Plus** is the AWS recommended choice.
+
+
+2. **Why Other Options Are Incorrect:**
+* **Automatically generate labels using an existing pre-trained model:** Pre-trained models often struggle with domain-specific defect detection (fine-grained anomalies) and can introduce unseen biases or errors.
+* **Allow a small team of internal employees to manually label the images:** Internal small teams lack scalability, are prone to fatigue/inconsistency over large datasets, and divert key internal resources away from core engineering tasks.
+* **Use a simple rule-based algorithm to assign labels based on image characteristics:** Rule-based heuristics are far too brittle for complex computer vision tasks where visual features vary broadly under different lighting, angles, and defect types.
+
+
+
+### Exam Quick-Memory Shortcut:
+
+* **Standard Ground Truth:** You build the workforce/workflows (In-house, Mechanical Turk, or 3rd-party vendors).
+* **GroundTruth Plus:** AWS manages everything end-to-end with expert human teams and automated QA.
+
+### Question 61
+
+An AI-driven healthcare company is focused on reducing its carbon footprint while running machine learning models to analyze large datasets for patient outcomes and research. To achieve this, the company needs to select an Amazon EC2 instance type that offers the highest energy efficiency for its computational workloads, minimizing environmental impact while still delivering the required performance for training complex machine learning models.
+
+Which of the following EC2 instance types would be the most suitable choice for achieving this goal?
+
+- Compute Optimized C type instances
+
+- Accelerated Computing G type instances
+
+- Accelerated Computing P type instances
+
+- AWS Trainium instances
+
+Overall explanation
+**Correct option:
+**
+- **AWS Trainium instances**
+
+- AWS Trainium instances are designed with energy efficiency in mind, providing optimal performance per watt for machine learning workloads. Trainium, AWS's custom-designed machine learning chip, is specifically engineered to offer the best performance at the lowest power consumption, reducing the carbon footprint of training large-scale models. This makes Trainium instances the most environmentally friendly choice among the options listed. Trn1 instances powered by Trainium are up to 25% more energy efficient for DL training than comparable accelerated computing EC2 instances.
+
+
+### Question 62
+
+A media company is using Amazon Bedrock to generate content such as headlines, articles, and social media posts. The data science team is particularly interested in understanding how adjusting the Temperature parameter can influence the model’s behavior to meet the company’s content generation goals.
+
+What do you recommend to the team regarding the Temperature parameter?
+
+- Influences the number of most-likely candidates that the model considers for the next token
+
+- Influences the percentage of most-likely candidates that the model considers for the next token
+
+- Influences the likelihood of the model selecting lower-probability outputs, thereby impacting the creativity of the model’s output
+
+- Specifies the sequences of characters that stop the model from generating further tokens
+
+Overall explanation
+**Correct option:**
+
+- **Influences the likelihood of the model selecting lower-probability outputs, thereby impacting the creativity of the model’s output**
+
+- Temperature is a value between 0 and 1, and it regulates the creativity of the model's responses. Use a lower temperature if you want more deterministic responses, and use a higher temperature if you want more creative or different responses for the same prompt on Amazon Bedrock.
+
+### Question 63
+
+Which Amazon SageMaker service aggregates and displays data from Amazon SageMaker Model Cards, SageMaker Model Monitor and SageMaker Endpoint services?
+
+- Amazon SageMaker Data Wrangler
+
+- Amazon SageMaker Feature Store
+
+- Amazon SageMaker Model Dashboard
+
+- Amazon SageMaker JumpStart
+
+Overall explanation
+**Correct option:**
+
+**Amazon SageMaker Model Dashboard**
+
+- Amazon SageMaker Model Dashboard is a centralized repository of all models created in your account. The models are generally the outputs of SageMaker training jobs, but you can also import models trained elsewhere and host them on SageMaker. Model Dashboard provides a single interface for IT administrators, model risk managers, and business leaders to track all deployed models and aggregate data from multiple AWS services to provide indicators about how your models are performing.
+
+- Model risk managers, ML practitioners, data scientists, and business leaders can get a comprehensive overview of models using the Model Dashboard. The dashboard aggregates and displays data from Amazon SageMaker Model Cards, Endpoints, and Model Monitor services to display valuable information such as model metadata from the model card and model registry, endpoints where the models are deployed, and insights from model monitoring
+
+### Question 64
+
+**Question:**
+
+> Which of the following represents the CORRECT statement regarding Amazon SageMaker Model Cards?
+
+**Correct Answer:**
+
+🔘 **Describes how a model should be used in a production environment**
+
+### AWS AI Practitioner Exam Perspective & Key Hints
+
+1. **Why "Describes how a model should be used in a production environment" is Correct:**
+* **Purpose of Model Cards:** SageMaker Model Cards document the **intended uses**, ethical considerations, operational bounds, and responsible AI guidelines for a model. This goes beyond technical deployment requirements to explain *how, when, and under what conditions* the model should properly be used in production.
+* **Governance Focus:** Model Cards serve as a single source of truth for governance and reporting, ensuring both developers and business stakeholders understand the model’s business scope and limitations.
+
+
+2. **Why Other Options Are Incorrect / Distractors:**
+* ❌ **"The purpose of a Model card is to describe the technical requirements to which an ML model should be deployed"**:
+* *Why it's wrong:* Model Cards capture much broader information than just technical/deployment specs (e.g., training datasets, intended use cases, risk ratings, and evaluation metrics). Technical specs alone belong to instance configuration or deployment manifests.
+
+
+* ❌ **"Model Cards can be customized to meet the business needs"**:
+* *Why it's wrong:* Standard SageMaker Model Cards follow a fixed default framework/schema provided by AWS. While you can populate custom sections/fields inside the standard template, the core structural model card system has an AWS-defined schema to maintain standardized governance.
+
+
+* ❌ **"Model cards cannot be created for models not trained on Amazon SageMaker"**:
+* *Why it's wrong:* You **can** create Model Cards for external/custom models trained outside SageMaker (e.g., on EC2, locally, or from third-party frameworks), though metadata will not be auto-populated like it is for SageMaker-trained models.
+
+
+### Exam Quick-Memory Shortcut:
+
+* **Model Cards Purpose:** Governance, risk rating, intended business use, and transparency.
+* **Flexibility:** Works with models trained in OR outside SageMaker.
+* **Content:** Covers both technical metrics and prescriptive usage boundaries.
+
+### Question 65
+
+A healthcare company wants to extract relevant health information from unstructured clinical data such as physician's notes, discharge summaries, and test results from multiple hospitals.
+
+Which ML-powered AWS service is the right fit to extract this data?
+
+- Amazon SageMaker
+
+- **Amazon Comprehend Medical**
+
+- Amazon Rekognition
+
+- Amazon Comprehend
+
