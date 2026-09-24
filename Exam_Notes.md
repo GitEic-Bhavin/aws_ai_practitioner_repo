@@ -234,3 +234,4 @@ Would you like to test your knowledge with a few more exam-style practice questi
 
 **"Reduce dimensions / feature count"** $\rightarrow$ PCA"Fast persona-based IAM policy generation" $\rightarrow$ SageMaker Role Manager
 
+**Want to Optimize Metrics** - `Use SageMaker AMT Automatic Model Tuning`.
