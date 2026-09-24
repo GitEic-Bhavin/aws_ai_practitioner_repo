@@ -1420,3 +1420,4 @@ Which of the following represents the best-fit explanation for the given scenari
   * **A data scientist selecting features based on personal beliefs:** Describes **confirmation bias** or **selection bias** introduced during feature engineering, rather than a model inheriting societal historical bias embedded directly within past training data.
   * **Predicting customer churn with seasonally skewed data:** Represents **temporal/sample bias** or non-stationary data drift, not demographic human bias.
 
+
